@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testGetFahrschule" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-12-18T17:32:00" hostname="DESKTOP-ANU2VG1" time="0.023">
+  <properties/>
+  <testcase name="getFahrschule200WithFahrzeugklasse" classname="testGetFahrschule" time="0.004"/>
+  <testcase name="getFahrschule200WithBezeichnung" classname="testGetFahrschule" time="0.007"/>
+  <testcase name="getFahrschule200WithoutParams" classname="testGetFahrschule" time="0.005"/>
+  <testcase name="getFahrschule200WithBothParams" classname="testGetFahrschule" time="0.006"/>
+  <system-out><![CDATA[Location: null
+Location: null
+Location: null
+Location: null
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testAddAdmin" tests="4" skipped="0" failures="0" errors="0" timestamp="2020-12-18T17:31:59" hostname="DESKTOP-ANU2VG1" time="0.321">
+  <properties/>
+  <testcase name="addschueler400V1" classname="testAddAdmin" time="0.193"/>
+  <testcase name="addschueler400V2" classname="testAddAdmin" time="0.026"/>
+  <testcase name="addschueler400V3" classname="testAddAdmin" time="0.009"/>
+  <testcase name="addschueler201" classname="testAddAdmin" time="0.092"/>
+  <system-out><![CDATA[
+
+
+lastrow: 4
+Location: http://127.0.0.1:8080/admins/4
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

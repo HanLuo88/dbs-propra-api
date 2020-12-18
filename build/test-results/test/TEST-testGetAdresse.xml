@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="testGetAdresse" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-12-18T17:32:00" hostname="DESKTOP-ANU2VG1" time="0.012">
+  <properties/>
+  <testcase name="getAdresse200WithHausnummer" classname="testGetAdresse" time="0.007"/>
+  <testcase name="getAdresse200WithoutParams" classname="testGetAdresse" time="0.005"/>
+  <system-out><![CDATA[Location: null
+Location: null
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
