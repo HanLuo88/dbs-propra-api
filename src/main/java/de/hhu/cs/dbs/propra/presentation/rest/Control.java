@@ -910,26 +910,20 @@ public class Control extends Application
             String fahrschulemail = rs.getString(1);
             rs.close();
 
-            String getPruefungID = "Select * from Theoriestunde;";
-            Statement stmt3 = connection.createStatement();
-            ResultSet rs1 = stmt3.executeQuery(getPruefungID);
-            int rownum = 0;
-            while (rs1.next())
+            String getPruefungID = "select max(theoriestunde.theoriestundeid) from theoriestunde;";
+            Statement stmt2 = connection.createStatement();
+            ResultSet rs1 = stmt2.executeQuery(getPruefungID);
+            if (rs1.next() == false)
             {
-                rownum = rownum + 1;
+                String fehler2 = "{\"message\":\"Bad Request\"}";
+                return Response.status(Response.Status.BAD_REQUEST).entity(fehler2).build();
             }
-            int lastrow = rownum;
+            int maxID = rs1.getInt(1);
+            System.out.println("maxID: " + maxID);
+            int lastrow = maxID + 1;
             System.out.println("lastrow: " + lastrow);
-            rs1.close();
 
-            long prID = 0;
-            PreparedStatement getIDrCurrent = connection.prepareStatement("SELECT TheoriestundeID from Theoriestunde WHERE Theoriestunde.rowid = " + lastrow + ";");
-            ResultSet rs2 = getIDrCurrent.executeQuery();
-            prID = rs2.getLong(1);
-            System.out.println("prID: " + prID);
-            lastrow = (int) prID + 1;
-            System.out.println("lastrow: " + lastrow);
-            rs2.close();
+
             String addTheorieuebung = "Insert into Theoriestunde(TheoriestundeID, Thema, Dauer, Verpflichtend, Email) " +
                                       "Values(?, ?, ?, ?, ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(addTheorieuebung);
@@ -1016,23 +1010,18 @@ public class Control extends Application
             {
                 theorie = true;
             }
-            String getPruefungID = "Select * from Pruefung;";
+            String getPruefungID = "select max(pruefung.pruefungsid) from pruefung;";
             Statement stmt3 = connection.createStatement();
             ResultSet rs2 = stmt3.executeQuery(getPruefungID);
-            int rownum = 0;
-            while (rs2.next())
+            if (rs2.next() == false)
             {
-                rownum = rownum + 1;
+                String fehler2 = "{\"message\":\"Bad Request\"}";
+                return Response.status(Response.Status.BAD_REQUEST).entity(fehler2).build();
             }
-            int lastrow = rownum;
-            rs2.close();
-
-            int prID = 0;
-            PreparedStatement getIDrCurrent = connection.prepareStatement("SELECT PruefungsID from Pruefung WHERE Pruefung.rowid = " + lastrow + ";");
-            ResultSet rs1 = getIDrCurrent.executeQuery();
-            prID = rs1.getInt(1);
-            lastrow = prID + 1;
-            rs1.close();
+            int maxID = rs2.getInt(1);
+            System.out.println("maxID: " + maxID);
+            int lastrow = maxID + 1;
+            System.out.println("lastrow: " + lastrow);
 
             String addPruefungen = "Insert into Pruefung(PruefungsID, Theorie, Gebuehr, Bestanden, Email) " +
                                    "Values(?, ?, ?, ?, ?);";
@@ -1044,11 +1033,7 @@ public class Control extends Application
             preparedStatement.setObject(5, fahrschueleremail);
             preparedStatement.execute();
 
-            int rowid = 0;
-            PreparedStatement getIDr = connection.prepareStatement("SELECT last_insert_rowid()");
-            ResultSet rset1 = getIDr.executeQuery();
-            rowid = rset1.getInt(1);
-            return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(rowid)).build()).build();
+            return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(lastrow)).build()).build();
         }
         catch (Exception se)
         {
@@ -1205,7 +1190,7 @@ public class Control extends Application
             String fahrschueleremail = rs1.getString(1);
 
 
-            String getFahrstundeID = "Select * from Fahrstunde;";
+            String getFahrstundeID = "select max(fahrstunde.fahrstundeid) from fahrstunde;";
             Statement stmt3 = connection.createStatement();
             ResultSet rs2 = stmt3.executeQuery(getFahrstundeID);
             if (rs2.next() == false)
@@ -1213,12 +1198,11 @@ public class Control extends Application
                 String fehler2 = "{\"message\":\"Bad Request\"}";
                 return Response.status(Response.Status.BAD_REQUEST).entity(fehler2).build();
             }
-            int rownum = 1;
-            while (rs2.next())
-            {
-                rownum = rownum + 1;
-            }
-            int lastrow = rownum + 1;
+            int maxID = rs2.getInt(1);
+            System.out.println("maxID: " + maxID);
+
+            int lastrow = maxID + 1;
+            System.out.println("lastrow: " + lastrow);
 
 
             String addFahrstunden = "Insert into Fahrstunde(FahrstundeID, Typ, Dauer, Preis, Schueleremail, Fahrlehreremail, Fahrschulemail) " +

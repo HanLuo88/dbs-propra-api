@@ -60,11 +60,7 @@ public class testAddPruefungenbyVerwalter
             {
                 Connection cn = ds.getConnection();
                 Statement stmt = cn.createStatement();
-                int rowid;
-                PreparedStatement getIDr = cn.prepareStatement("SELECT last_insert_rowid();");
-                ResultSet rset1 = getIDr.executeQuery();
-                rowid = rset1.getInt(1);
-                stmt.executeUpdate("DELETE FROM Pruefung WHERE TheoriestundeID = " + rowid + ";");
+                stmt.executeUpdate("DELETE FROM Pruefung WHERE Pruefung.PruefungsID = (SELECT max(Pruefung.PruefungsID) from Pruefung);");
                 cn.close();
             }
             catch (Exception e)
@@ -97,10 +93,10 @@ public class testAddPruefungenbyVerwalter
                 Connection cn = ds.getConnection();
                 Statement stmt = cn.createStatement();
                 int rowid;
-                PreparedStatement getIDr = cn.prepareStatement("SELECT last_insert_rowid();");
+                PreparedStatement getIDr = cn.prepareStatement("SELECT last_insert_rowid()");
                 ResultSet rset1 = getIDr.executeQuery();
                 rowid = rset1.getInt(1);
-                stmt.executeUpdate("DELETE FROM Pruefung WHERE TheoriestundeID = " + rowid + ";");
+                stmt.executeUpdate("DELETE FROM Pruefung WHERE pruefungsid = " + rowid + ";");
                 cn.close();
             }
             catch (Exception e)
@@ -136,7 +132,7 @@ public class testAddPruefungenbyVerwalter
                 PreparedStatement getIDr = cn.prepareStatement("SELECT last_insert_rowid()");
                 ResultSet rset1 = getIDr.executeQuery();
                 rowid = rset1.getInt(1);
-                stmt.executeUpdate("DELETE FROM Pruefung WHERE TheoriestundeID = " + rowid);
+                stmt.executeUpdate("DELETE FROM Pruefung WHERE pruefungsid = " + rowid + ";");
                 cn.close();
             }
             catch (Exception e)
@@ -172,7 +168,7 @@ public class testAddPruefungenbyVerwalter
                 PreparedStatement getIDr = cn.prepareStatement("SELECT last_insert_rowid()");
                 ResultSet rset1 = getIDr.executeQuery();
                 rowid = rset1.getInt(1);
-                stmt.executeUpdate("DELETE FROM Pruefung WHERE TheoriestundeID = " + rowid);
+                stmt.executeUpdate("DELETE FROM Pruefung WHERE pruefungsid = " + rowid + ";");
                 cn.close();
             }
             catch (Exception e)

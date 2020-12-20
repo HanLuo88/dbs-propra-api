@@ -60,11 +60,7 @@ public class testAddFahrstundenbyFahrlehrer
             {
                 Connection cn = ds.getConnection();
                 Statement stmt = cn.createStatement();
-                int rowid;
-                PreparedStatement getIDr = cn.prepareStatement("SELECT last_insert_rowid()");
-                ResultSet rset1 = getIDr.executeQuery();
-                rowid = rset1.getInt(1);
-                stmt.executeUpdate("DELETE FROM Fahrstunde WHERE FahrstundeID = " + rowid);
+                stmt.executeUpdate("DELETE FROM Fahrstunde WHERE FahrstundeID = (SELECT max(fahrstunde.FahrstundeID) from Fahrstunde);");
                 cn.close();
             }
             catch (Exception e)
