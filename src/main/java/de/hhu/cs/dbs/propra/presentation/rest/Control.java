@@ -155,20 +155,13 @@ public class Control extends Application
             prpaddschueler.setObject(3, adresseid);
             prpaddschueler.executeUpdate();
 
-            String getSchuelerID = "Select * from Schueler;";
+            String getSchuelerID = "Select max(rowid) from Schueler;";
             Statement stmtSchuelerID = connection.createStatement();
             ResultSet rs1 = stmtSchuelerID.executeQuery(getSchuelerID);
-            int rownum = 0;
-            while (rs1.next())
-            {
-                rownum = rownum + 1;
-            }
-            int lastrow = rownum;
+            int rownum = rs1.getInt(1);
             rs1.close();
-            System.out.println("lastrow: " + lastrow);
-            Response resp = Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(lastrow)).build()).build();
-            int stat = resp.getStatus();
-            System.out.println("statuscode: " + stat);
+            System.out.println("rownum: " + rownum);
+            Response resp = Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(rownum)).build()).build();
             return resp;
         }
         catch (Exception se)
@@ -249,18 +242,13 @@ public class Control extends Application
             prpaddAdmin.setObject(2, telefonnummer);
             prpaddAdmin.executeUpdate();
 
-            String getVerwalterID = "Select * from Verwalter;";
+            String getVerwalterID = "Select max(rowid) from Verwalter;";
             Statement stmtVerwalterID = connection.createStatement();
             ResultSet rs1 = stmtVerwalterID.executeQuery(getVerwalterID);
-            int rownum = 0;
-            while (rs1.next())
-            {
-                rownum = rownum + 1;
-            }
-            int lastrow = rownum;
-            System.out.println("lastrow: " + lastrow);
+            int rownum = rs1.getInt(1);
+            System.out.println("rownum: " + rownum);
             rs1.close();
-            return Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(lastrow)).build()).build();
+            return Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(rownum)).build()).build();
         }
         catch (Exception se)
         {
@@ -341,18 +329,13 @@ public class Control extends Application
             prpaddFahrlehrer.setObject(2, lizenzdatum);
             prpaddFahrlehrer.executeUpdate();
 
-            String getFahrlehrerID = "Select * from Fahrlehrer;";
+            String getFahrlehrerID = "Select max(rowid) from Fahrlehrer;";
             Statement stmtFahrlehrerID = connection.createStatement();
             ResultSet rs1 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
-            int rownum = 0;
-            while (rs1.next())
-            {
-                rownum = rownum + 1;
-            }
-            int lastrow = rownum;
-            System.out.println("lastrow: " + lastrow);
+            int rownum = rs1.getInt(1);
+            System.out.println("rownum: " + rownum);
             rs1.close();
-            return Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(lastrow)).build()).build(); //
+            return Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(rownum)).build()).build(); //
         }
         catch (Exception se)
         {
@@ -738,19 +721,15 @@ public class Control extends Application
             preparedStatement.execute();
 
 
-            String getFahrlehrerID = "Select * from Fahrschule;";
+            String getFahrlehrerID = "Select max(rowid) from Fahrschule;";
             Statement stmtFahrlehrerID = connection.createStatement();
             ResultSet rs1 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
-            int rownum = 0;
-            while (rs1.next())
-            {
-                rownum = rownum + 1;
-            }
-            int lastrow = rownum;
-            System.out.println("lastrow: " + lastrow);
+            int rownum = rs1.getInt(1);
+
+            System.out.println("rownum: " + rownum);
             rs1.close();
 
-            return Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(lastrow)).build()).build();
+            return Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(rownum)).build()).build();
         }
         catch (Exception se)
         {
@@ -851,19 +830,13 @@ public class Control extends Application
             preparedStatement.setObject(5, fahrzeugklassebezeichnung);
             preparedStatement.execute();
 
-            String getFahrlehrerID = "Select * from Fahrzeug;";
+            String getFahrlehrerID = "Select max(rowid) from Fahrzeug;";
             Statement stmtFahrlehrerID = connection.createStatement();
             ResultSet rs2 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
-            int rownum = 0;
-            while (rs2.next())
-            {
-                rownum = rownum + 1;
-            }
-            int lastrow = rownum;
-            System.out.println("lastrow: " + lastrow);
+            int rownum = rs2.getInt(1);
+            System.out.println("rownum: " + rownum);
             rs2.close();
-
-            return Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(lastrow)).build()).build();
+            return Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(rownum)).build()).build();
         }
         catch (Exception se)
         {
@@ -946,33 +919,25 @@ public class Control extends Application
                 return Response.status(Response.Status.BAD_REQUEST).entity(fehler2).build();
             }
             int maxID = rs1.getInt(1);
-            System.out.println("maxID: " + maxID);
-            int currentID = maxID + 1;
-            System.out.println("currentID: " + currentID);
-
+            int newID = maxID + 1;
 
             String addTheorieuebung = "Insert into Theoriestunde(TheoriestundeID, Thema, Dauer, Verpflichtend, Email) " +
                                       "Values(?, ?, ?, ?, ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(addTheorieuebung);
-            preparedStatement.setObject(1, currentID);
+            preparedStatement.setObject(1, newID);
             preparedStatement.setObject(2, themabezeichnung);
             preparedStatement.setObject(3, dauer);
             preparedStatement.setObject(4, verpflichtend);
             preparedStatement.setObject(5, fahrschulemail);
             preparedStatement.execute();
 
-            String getFahrlehrerID = "Select * from Theoriestunde;";
+            String getFahrlehrerID = "Select max(rowid) from Theoriestunde;";
             Statement stmtFahrlehrerID = connection.createStatement();
             ResultSet rs2 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
-            int rownum = 0;
-            while (rs2.next())
-            {
-                rownum = rownum + 1;
-            }
-            int lastrow = rownum;
-            System.out.println("lastrow: " + lastrow);
+            int rownum = rs2.getInt(1);
+            System.out.println("rownum: " + rownum);
             rs2.close();
-            return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(lastrow)).build()).build();
+            return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(rownum)).build()).build();
         }
         catch (Exception se)
         {
@@ -1072,19 +1037,13 @@ public class Control extends Application
             preparedStatement.setObject(5, fahrschueleremail);
             preparedStatement.execute();
 
-            String getFahrlehrerID = "Select * from Pruefung;";
+            String getFahrlehrerID = "Select max(rowid) from Pruefung;";
             Statement stmtFahrlehrerID = connection.createStatement();
             ResultSet rs3 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
-            int rownum = 0;
-            while (rs3.next())
-            {
-                rownum = rownum + 1;
-            }
-            int lastrow = rownum;
-            System.out.println("lastrow: " + lastrow);
+            int rownum = rs3.getInt(1);
+            System.out.println("rownum: " + rownum);
             rs3.close();
-
-            return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(lastrow)).build()).build();
+            return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(rownum)).build()).build();
         }
         catch (Exception se)
         {
@@ -1250,11 +1209,7 @@ public class Control extends Application
                 return Response.status(Response.Status.BAD_REQUEST).entity(fehler2).build();
             }
             int maxID = rs2.getInt(1);
-            System.out.println("maxID: " + maxID);
-
             int newID = maxID + 1;
-            System.out.println("newID: " + newID);
-
 
             String addFahrstunden = "Insert into Fahrstunde(FahrstundeID, Typ, Dauer, Preis, Schueleremail, Fahrlehreremail, Fahrschulemail) " +
                                     "Values(?, ?, ?, ?, ?, ?, ?);";
@@ -1268,18 +1223,13 @@ public class Control extends Application
             preparedStatement.setObject(7, fahrschulemail);
             preparedStatement.execute();
 
-            String getFahrlehrerID = "Select * from Fahrstunde;";
+            String getFahrlehrerID = "Select max(rowid) from Fahrstunde;";
             Statement stmtFahrlehrerID = connection.createStatement();
             ResultSet rs3 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
-            int rownum = 0;
-            while (rs3.next())
-            {
-                rownum = rownum + 1;
-            }
-            int lastrow = rownum;
-            System.out.println("lastrow: " + lastrow);
+            int rownum = rs3.getInt(1);
+            System.out.println("rownum: " + rownum);
             rs3.close();
-            return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(lastrow)).build()).build();
+            return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(rownum)).build()).build();
         }
         catch (Exception se)
         {
@@ -1386,8 +1336,6 @@ public class Control extends Application
             }
 
             String schueleremail = securityContext.getUserPrincipal().getName();
-            int rowid = 0;
-
             String theoriestundeidexistiert =
                     "SELECT count(*) " +
                     "FROM Theoriestunde " +
@@ -1408,11 +1356,14 @@ public class Control extends Application
             preparedStatement1.setObject(1, schueleremail);
             preparedStatement1.setObject(2, theorieuebungid);
             preparedStatement1.execute();
-            PreparedStatement getIDr = connection.prepareStatement("SELECT last_insert_rowid()");
-            ResultSet rset1 = getIDr.executeQuery();
-            rowid = rset1.getInt(1);
-            System.out.println("rowID:" + rowid);
-            return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(rowid)).build()).build();
+
+            String getFahrlehrerID = "Select max(rowid) from nehmen_teil;";
+            Statement stmtFahrlehrerID = connection.createStatement();
+            ResultSet rs3 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
+            int rownum = rs3.getInt(1);
+            System.out.println("rownum: " + rownum);
+            rs3.close();
+            return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(rownum)).build()).build();
         }
         catch (Exception se)
         {
