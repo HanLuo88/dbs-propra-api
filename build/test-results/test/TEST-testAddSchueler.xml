@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testAddSchueler" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-12-20T16:18:43" hostname="DESKTOP-ANU2VG1" time="0.056">
+<testsuite name="testAddSchueler" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-12-20T19:59:26" hostname="DESKTOP-ANU2VG1" time="0.13">
   <properties/>
-  <testcase name="addschueler400V1" classname="testAddSchueler" time="0.005"/>
-  <testcase name="addschueler400mitSQLExcep" classname="testAddSchueler" time="0.026"/>
-  <testcase name="addschueler201" classname="testAddSchueler" time="0.024"/>
+  <testcase name="addschueler400V1" classname="testAddSchueler" time="0.007"/>
+  <testcase name="addschueler400mitSQLExcep" classname="testAddSchueler" time="0.059"/>
+  <testcase name="addschueler201" classname="testAddSchueler" time="0.064"/>
   <system-out><![CDATA[Location: null
 
 Location: null
 
-lastrow: 14
-statuscode: 201
+rownum: 14
 Location: http://127.0.0.1:8080/fahrschueler/14
 ]]></system-out>
   <system-err><![CDATA[org.sqlite.SQLiteException: [SQLITE_CONSTRAINT]  Abort due to constraint violation (FOREIGN KEY constraint failed)

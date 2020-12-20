@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testAddPruefungenbyVerwalter" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-12-20T16:18:43" hostname="DESKTOP-ANU2VG1" time="0.092">
+<testsuite name="testAddPruefungenbyVerwalter" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-12-20T19:59:26" hostname="DESKTOP-ANU2VG1" time="0.165">
   <properties/>
-  <testcase name="addPruefung201" classname="testAddPruefungenbyVerwalter" time="0.033"/>
-  <testcase name="addPruefung400V1" classname="testAddPruefungenbyVerwalter" time="0.018"/>
-  <testcase name="addPruefung400V2" classname="testAddPruefungenbyVerwalter" time="0.008"/>
-  <testcase name="addPruefung400V3" classname="testAddPruefungenbyVerwalter" time="0.017"/>
-  <testcase name="addPruefung400V4" classname="testAddPruefungenbyVerwalter" time="0.014"/>
+  <testcase name="addPruefung201" classname="testAddPruefungenbyVerwalter" time="0.055"/>
+  <testcase name="addPruefung400V1" classname="testAddPruefungenbyVerwalter" time="0.026"/>
+  <testcase name="addPruefung400V2" classname="testAddPruefungenbyVerwalter" time="0.016"/>
+  <testcase name="addPruefung400V3" classname="testAddPruefungenbyVerwalter" time="0.037"/>
+  <testcase name="addPruefung400V4" classname="testAddPruefungenbyVerwalter" time="0.03"/>
   <system-out><![CDATA[maxID: 5
 CurrentID: 6
-lastrow: 6
+rownum: 6
 Location: http://127.0.0.1:8080/pruefungen/6
 
 Location: null
@@ -29,7 +29,7 @@ Location: null
 	at org.sqlite.core.DB.newSQLException(DB.java:1022)
 	at org.sqlite.core.DB.execute(DB.java:861)
 	at org.sqlite.jdbc3.JDBC3PreparedStatement.execute(JDBC3PreparedStatement.java:54)
-	at de.hhu.cs.dbs.propra.presentation.rest.Control.addPruefungenbyVerwalter(Control.java:1073)
+	at de.hhu.cs.dbs.propra.presentation.rest.Control.addPruefungenbyVerwalter(Control.java:1038)
 	at testAddPruefungenbyVerwalter.addPruefung400V3(testAddPruefungenbyVerwalter.java:150)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -88,7 +88,7 @@ org.sqlite.SQLiteException: [SQLITE_CONSTRAINT]  Abort due to constraint violati
 	at org.sqlite.core.DB.newSQLException(DB.java:1022)
 	at org.sqlite.core.DB.execute(DB.java:861)
 	at org.sqlite.jdbc3.JDBC3PreparedStatement.execute(JDBC3PreparedStatement.java:54)
-	at de.hhu.cs.dbs.propra.presentation.rest.Control.addPruefungenbyVerwalter(Control.java:1073)
+	at de.hhu.cs.dbs.propra.presentation.rest.Control.addPruefungenbyVerwalter(Control.java:1038)
 	at testAddPruefungenbyVerwalter.addPruefung400V4(testAddPruefungenbyVerwalter.java:186)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)

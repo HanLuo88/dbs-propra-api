@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testAddTheoriebyVerwalter" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-20T16:18:44" hostname="DESKTOP-ANU2VG1" time="0.024">
+<testsuite name="testAddTheoriebyVerwalter" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-20T19:59:26" hostname="DESKTOP-ANU2VG1" time="0.052">
   <properties/>
-  <testcase name="addTheorie201" classname="testAddTheoriebyVerwalter" time="0.024"/>
-  <system-out><![CDATA[maxID: 9
-currentID: 10
-lastrow: 10
+  <testcase name="addTheorie201" classname="testAddTheoriebyVerwalter" time="0.052"/>
+  <system-out><![CDATA[rownum: 10
 Location: http://127.0.0.1:8080/theorieuebungen/10
 
 ]]></system-out>

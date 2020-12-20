@@ -160,7 +160,6 @@ public class Control extends Application
             ResultSet rs1 = stmtSchuelerID.executeQuery(getSchuelerID);
             int rownum = rs1.getInt(1);
             rs1.close();
-            System.out.println("rownum: " + rownum);
             Response resp = Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(rownum)).build()).build();
             return resp;
         }
@@ -246,7 +245,6 @@ public class Control extends Application
             Statement stmtVerwalterID = connection.createStatement();
             ResultSet rs1 = stmtVerwalterID.executeQuery(getVerwalterID);
             int rownum = rs1.getInt(1);
-            System.out.println("rownum: " + rownum);
             rs1.close();
             return Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(rownum)).build()).build();
         }
@@ -333,7 +331,6 @@ public class Control extends Application
             Statement stmtFahrlehrerID = connection.createStatement();
             ResultSet rs1 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
             int rownum = rs1.getInt(1);
-            System.out.println("rownum: " + rownum);
             rs1.close();
             return Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(rownum)).build()).build(); //
         }
@@ -725,8 +722,6 @@ public class Control extends Application
             Statement stmtFahrlehrerID = connection.createStatement();
             ResultSet rs1 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
             int rownum = rs1.getInt(1);
-
-            System.out.println("rownum: " + rownum);
             rs1.close();
 
             return Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(rownum)).build()).build();
@@ -834,7 +829,7 @@ public class Control extends Application
             Statement stmtFahrlehrerID = connection.createStatement();
             ResultSet rs2 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
             int rownum = rs2.getInt(1);
-            System.out.println("rownum: " + rownum);
+
             rs2.close();
             return Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(rownum)).build()).build();
         }
@@ -935,7 +930,6 @@ public class Control extends Application
             Statement stmtFahrlehrerID = connection.createStatement();
             ResultSet rs2 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
             int rownum = rs2.getInt(1);
-            System.out.println("rownum: " + rownum);
             rs2.close();
             return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(rownum)).build()).build();
         }
@@ -1023,9 +1017,7 @@ public class Control extends Application
                 return Response.status(Response.Status.BAD_REQUEST).entity(fehler2).build();
             }
             int maxID = rs2.getInt(1);
-            System.out.println("maxID: " + maxID);
             int newID = maxID + 1;
-            System.out.println("CurrentID: " + newID);
 
             String addPruefungen = "Insert into Pruefung(PruefungsID, Theorie, Gebuehr, Bestanden, Email) " +
                                    "Values(?, ?, ?, ?, ?);";
@@ -1041,7 +1033,6 @@ public class Control extends Application
             Statement stmtFahrlehrerID = connection.createStatement();
             ResultSet rs3 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
             int rownum = rs3.getInt(1);
-            System.out.println("rownum: " + rownum);
             rs3.close();
             return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(rownum)).build()).build();
         }
@@ -1227,7 +1218,6 @@ public class Control extends Application
             Statement stmtFahrlehrerID = connection.createStatement();
             ResultSet rs3 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
             int rownum = rs3.getInt(1);
-            System.out.println("rownum: " + rownum);
             rs3.close();
             return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(rownum)).build()).build();
         }
@@ -1361,7 +1351,6 @@ public class Control extends Application
             Statement stmtFahrlehrerID = connection.createStatement();
             ResultSet rs3 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
             int rownum = rs3.getInt(1);
-            System.out.println("rownum: " + rownum);
             rs3.close();
             return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(rownum)).build()).build();
         }

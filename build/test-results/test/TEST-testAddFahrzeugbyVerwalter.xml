@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testAddFahrzeugbyVerwalter" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-20T16:18:43" hostname="DESKTOP-ANU2VG1" time="0.024">
+<testsuite name="testAddFahrzeugbyVerwalter" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-20T19:59:26" hostname="DESKTOP-ANU2VG1" time="0.063">
   <properties/>
-  <testcase name="addFahrzeug" classname="testAddFahrzeugbyVerwalter" time="0.024"/>
-  <system-out><![CDATA[lastrow: 4
+  <testcase name="addFahrzeug" classname="testAddFahrzeugbyVerwalter" time="0.063"/>
+  <system-out><![CDATA[rownum: 4
 Location: http://127.0.0.1:8080/fahrzeuge/4
 
 ]]></system-out>
