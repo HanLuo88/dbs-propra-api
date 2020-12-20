@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testAddFahrstundenbyFahrlehrer" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-12-18T17:32:00" hostname="DESKTOP-ANU2VG1" time="0.164">
+<testsuite name="testAddFahrstundenbyFahrlehrer" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-12-20T16:18:43" hostname="DESKTOP-ANU2VG1" time="0.061">
   <properties/>
-  <testcase name="addFahrstunde201" classname="testAddFahrstundenbyFahrlehrer" time="0.07"/>
-  <testcase name="addFahrstunde400V1" classname="testAddFahrstundenbyFahrlehrer" time="0.063"/>
-  <testcase name="addFahrstunde400V2" classname="testAddFahrstundenbyFahrlehrer" time="0.03"/>
-  <system-out><![CDATA[Location: http://127.0.0.1:8080/fahrstunden/74
+  <testcase name="addFahrstunde201" classname="testAddFahrstundenbyFahrlehrer" time="0.028"/>
+  <testcase name="addFahrstunde400V1" classname="testAddFahrstundenbyFahrlehrer" time="0.025"/>
+  <testcase name="addFahrstunde400V2" classname="testAddFahrstundenbyFahrlehrer" time="0.008"/>
+  <system-out><![CDATA[maxID: 70
+newID: 71
+lastrow: 71
+Location: http://127.0.0.1:8080/fahrstunden/71
 
 Location: null
 

@@ -14,8 +14,8 @@ testAddFahrstundenbyFahrlehrer.java
  testAddFahrstundenbyFahrlehrer
 testGetAdresse.java
  testGetAdresse
-testAddSchuelerzuTheoriebySchueler.java
- testAddSchuelerzuTheoriebySchueler
+testAddPruefungenbyVerwalter.java
+ testAddPruefungenbyVerwalter
 testGetFahrstundenbyFahrlehrer.java
  testGetFahrstundenbyFahrlehrer
 testGetFahrzeug.java
@@ -28,9 +28,9 @@ testAddFahrlehrer.java
  testAddFahrlehrer
 testAddFahrschulenbyVerwalter.java
  testAddFahrschulenbyVerwalter
-testAddSchueler.java
- testAddSchueler
+testAddSchuelerzuTheoriebySchueler.java
+ testAddSchuelerzuTheoriebySchueler
 testGetFahrlehrer.java
  testGetFahrlehrer
-testAddPruefungenbyVerwalter.java
- testAddPruefungenbyVerwalter
+testAddSchueler.java
+ testAddSchueler

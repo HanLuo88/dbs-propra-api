@@ -30,7 +30,7 @@ public class SQLiteUserRepository implements UserRepository
                          "SELECT Email, 'SCHUELER' as Role FROM Schueler WHERE Schueler.Email = ? " +
                          "UNION " +
                          "SELECT Email, 'VERWALTER' FROM Verwalter WHERE Verwalter.Email = ?;"; //
-            // TODO: Dem Benutzer 'name' die entsprechenden Berechtigungen geben (siehe enum Role), um diese per RolesAllowed-Annotation zu nutzen. Ein Ergebnistupel besteht aus E-Mail-Adresse bzw. Benutzernamen und Berechtigung.
+
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.closeOnCompletion();
             preparedStatement.setObject(1, name);
@@ -51,7 +51,7 @@ public class SQLiteUserRepository implements UserRepository
         try (Connection connection = dataSource.getConnection())
         {
             String sql = "SELECT count(*) FROM (SELECT Email, Passwort " +
-                         "From Nutzer WHERE Email = ? AND Passwort = ?);"; // TODO: Die Anzahl der Benutzer mit 'name' als E-Mail-Adresse bzw. Benutzernamen und 'password' als Passwort zurueckgeben.
+                         "From Nutzer WHERE Email = ? AND Passwort = ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.closeOnCompletion();
             preparedStatement.setObject(1, name);

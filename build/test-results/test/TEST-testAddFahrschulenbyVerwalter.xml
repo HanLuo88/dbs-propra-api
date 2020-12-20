@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testAddFahrschulenbyVerwalter" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-12-18T17:31:59" hostname="DESKTOP-ANU2VG1" time="0.133">
+<testsuite name="testAddFahrschulenbyVerwalter" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-12-20T16:18:43" hostname="DESKTOP-ANU2VG1" time="0.064">
   <properties/>
-  <testcase name="addFahrschule400V1" classname="testAddFahrschulenbyVerwalter" time="0.02"/>
-  <testcase name="addFahrschule400V2" classname="testAddFahrschulenbyVerwalter" time="0.053"/>
-  <testcase name="addFahrschule201" classname="testAddFahrschulenbyVerwalter" time="0.059"/>
+  <testcase name="addFahrschule400V1" classname="testAddFahrschulenbyVerwalter" time="0.012"/>
+  <testcase name="addFahrschule400V2" classname="testAddFahrschulenbyVerwalter" time="0.027"/>
+  <testcase name="addFahrschule201" classname="testAddFahrschulenbyVerwalter" time="0.023"/>
   <system-out><![CDATA[Location: null
 
 Location: null
 
-Location: http://127.0.0.1:8080/fahrschulen/testfahrschule@web.de
+lastrow: 4
+Location: http://127.0.0.1:8080/fahrschulen/4
 
 ]]></system-out>
   <system-err><![CDATA[org.sqlite.SQLiteException: [SQLITE_CONSTRAINT]  Abort due to constraint violation (FOREIGN KEY constraint failed)

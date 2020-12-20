@@ -60,11 +60,7 @@ public class testAddTheoriebyVerwalter
             {
                 Connection cn = ds.getConnection();
                 Statement stmt = cn.createStatement();
-                int rowid;
-                PreparedStatement getIDr = cn.prepareStatement("SELECT last_insert_rowid()");
-                ResultSet rset1 = getIDr.executeQuery();
-                rowid = rset1.getInt(1);
-                stmt.executeUpdate("DELETE FROM Theoriestunde WHERE TheoriestundeID = " + rowid + ";");
+                stmt.executeUpdate("DELETE FROM Theoriestunde WHERE Theoriestunde.TheoriestundeID = (SELECT max(Theoriestunde.TheoriestundeID) from Theoriestunde);");
                 cn.close();
             }
             catch (Exception e)

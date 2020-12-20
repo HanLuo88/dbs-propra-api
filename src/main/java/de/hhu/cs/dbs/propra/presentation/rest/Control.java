@@ -736,7 +736,21 @@ public class Control extends Application
             preparedStatement.setObject(4, adresseid);
             preparedStatement.setObject(5, adminemail);
             preparedStatement.execute();
-            return Response.created(uriInfo.getAbsolutePathBuilder().path(email).build()).build();
+
+
+            String getFahrlehrerID = "Select * from Fahrschule;";
+            Statement stmtFahrlehrerID = connection.createStatement();
+            ResultSet rs1 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
+            int rownum = 0;
+            while (rs1.next())
+            {
+                rownum = rownum + 1;
+            }
+            int lastrow = rownum;
+            System.out.println("lastrow: " + lastrow);
+            rs1.close();
+
+            return Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(lastrow)).build()).build();
         }
         catch (Exception se)
         {
@@ -836,7 +850,20 @@ public class Control extends Application
             preparedStatement.setObject(4, fahrschulemail);
             preparedStatement.setObject(5, fahrzeugklassebezeichnung);
             preparedStatement.execute();
-            return Response.created(uriInfo.getAbsolutePathBuilder().path(kennzeichen).build()).build();
+
+            String getFahrlehrerID = "Select * from Fahrzeug;";
+            Statement stmtFahrlehrerID = connection.createStatement();
+            ResultSet rs2 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
+            int rownum = 0;
+            while (rs2.next())
+            {
+                rownum = rownum + 1;
+            }
+            int lastrow = rownum;
+            System.out.println("lastrow: " + lastrow);
+            rs2.close();
+
+            return Response.created(uriInfo.getAbsolutePathBuilder().path(String.valueOf(lastrow)).build()).build();
         }
         catch (Exception se)
         {
@@ -920,19 +947,31 @@ public class Control extends Application
             }
             int maxID = rs1.getInt(1);
             System.out.println("maxID: " + maxID);
-            int lastrow = maxID + 1;
-            System.out.println("lastrow: " + lastrow);
+            int currentID = maxID + 1;
+            System.out.println("currentID: " + currentID);
 
 
             String addTheorieuebung = "Insert into Theoriestunde(TheoriestundeID, Thema, Dauer, Verpflichtend, Email) " +
                                       "Values(?, ?, ?, ?, ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(addTheorieuebung);
-            preparedStatement.setObject(1, lastrow);
+            preparedStatement.setObject(1, currentID);
             preparedStatement.setObject(2, themabezeichnung);
             preparedStatement.setObject(3, dauer);
             preparedStatement.setObject(4, verpflichtend);
             preparedStatement.setObject(5, fahrschulemail);
             preparedStatement.execute();
+
+            String getFahrlehrerID = "Select * from Theoriestunde;";
+            Statement stmtFahrlehrerID = connection.createStatement();
+            ResultSet rs2 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
+            int rownum = 0;
+            while (rs2.next())
+            {
+                rownum = rownum + 1;
+            }
+            int lastrow = rownum;
+            System.out.println("lastrow: " + lastrow);
+            rs2.close();
             return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(lastrow)).build()).build();
         }
         catch (Exception se)
@@ -1020,18 +1059,30 @@ public class Control extends Application
             }
             int maxID = rs2.getInt(1);
             System.out.println("maxID: " + maxID);
-            int lastrow = maxID + 1;
-            System.out.println("lastrow: " + lastrow);
+            int newID = maxID + 1;
+            System.out.println("CurrentID: " + newID);
 
             String addPruefungen = "Insert into Pruefung(PruefungsID, Theorie, Gebuehr, Bestanden, Email) " +
                                    "Values(?, ?, ?, ?, ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(addPruefungen);
-            preparedStatement.setObject(1, lastrow);
+            preparedStatement.setObject(1, newID);
             preparedStatement.setObject(2, theorie);
             preparedStatement.setObject(3, gebuehr);
             preparedStatement.setObject(4, ergebnis);
             preparedStatement.setObject(5, fahrschueleremail);
             preparedStatement.execute();
+
+            String getFahrlehrerID = "Select * from Pruefung;";
+            Statement stmtFahrlehrerID = connection.createStatement();
+            ResultSet rs3 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
+            int rownum = 0;
+            while (rs3.next())
+            {
+                rownum = rownum + 1;
+            }
+            int lastrow = rownum;
+            System.out.println("lastrow: " + lastrow);
+            rs3.close();
 
             return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(lastrow)).build()).build();
         }
@@ -1201,14 +1252,14 @@ public class Control extends Application
             int maxID = rs2.getInt(1);
             System.out.println("maxID: " + maxID);
 
-            int lastrow = maxID + 1;
-            System.out.println("lastrow: " + lastrow);
+            int newID = maxID + 1;
+            System.out.println("newID: " + newID);
 
 
             String addFahrstunden = "Insert into Fahrstunde(FahrstundeID, Typ, Dauer, Preis, Schueleremail, Fahrlehreremail, Fahrschulemail) " +
                                     "Values(?, ?, ?, ?, ?, ?, ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(addFahrstunden);
-            preparedStatement.setObject(1, lastrow);
+            preparedStatement.setObject(1, newID);
             preparedStatement.setObject(2, typ);
             preparedStatement.setObject(3, dauer);
             preparedStatement.setObject(4, preis);
@@ -1216,6 +1267,18 @@ public class Control extends Application
             preparedStatement.setObject(6, fahrlehrermail);
             preparedStatement.setObject(7, fahrschulemail);
             preparedStatement.execute();
+
+            String getFahrlehrerID = "Select * from Fahrstunde;";
+            Statement stmtFahrlehrerID = connection.createStatement();
+            ResultSet rs3 = stmtFahrlehrerID.executeQuery(getFahrlehrerID);
+            int rownum = 0;
+            while (rs3.next())
+            {
+                rownum = rownum + 1;
+            }
+            int lastrow = rownum;
+            System.out.println("lastrow: " + lastrow);
+            rs3.close();
             return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(lastrow)).build()).build();
         }
         catch (Exception se)
@@ -1348,6 +1411,7 @@ public class Control extends Application
             PreparedStatement getIDr = connection.prepareStatement("SELECT last_insert_rowid()");
             ResultSet rset1 = getIDr.executeQuery();
             rowid = rset1.getInt(1);
+            System.out.println("rowID:" + rowid);
             return Response.created(uriInfo.getAbsolutePathBuilder().path(Integer.toString(rowid)).build()).build();
         }
         catch (Exception se)
