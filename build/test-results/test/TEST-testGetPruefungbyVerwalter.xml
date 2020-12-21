@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testGetPruefungbyVerwalter" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-12-20T19:59:27" hostname="DESKTOP-ANU2VG1" time="0.052">
+<testsuite name="testGetPruefungbyVerwalter" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-12-20T20:03:35" hostname="DESKTOP-ANU2VG1" time="0.022">
   <properties/>
-  <testcase name="getPruefungen200V1" classname="testGetPruefungbyVerwalter" time="0.019"/>
-  <testcase name="getPruefungen200V2" classname="testGetPruefungbyVerwalter" time="0.012"/>
-  <testcase name="getPruefungen200V3" classname="testGetPruefungbyVerwalter" time="0.005"/>
-  <testcase name="getPruefungen200V4" classname="testGetPruefungbyVerwalter" time="0.008"/>
-  <testcase name="getPruefungen200V5" classname="testGetPruefungbyVerwalter" time="0.007"/>
+  <testcase name="getPruefungen200V1" classname="testGetPruefungbyVerwalter" time="0.006"/>
+  <testcase name="getPruefungen200V2" classname="testGetPruefungbyVerwalter" time="0.004"/>
+  <testcase name="getPruefungen200V3" classname="testGetPruefungbyVerwalter" time="0.004"/>
+  <testcase name="getPruefungen200V4" classname="testGetPruefungbyVerwalter" time="0.004"/>
+  <testcase name="getPruefungen200V5" classname="testGetPruefungbyVerwalter" time="0.004"/>
   <system-out><![CDATA[Location: null
 Location: null
 Location: null

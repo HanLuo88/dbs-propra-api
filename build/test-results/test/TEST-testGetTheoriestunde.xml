@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testGetTheoriestunde" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-12-20T19:59:27" hostname="DESKTOP-ANU2VG1" time="0.034">
+<testsuite name="testGetTheoriestunde" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-12-20T20:03:35" hostname="DESKTOP-ANU2VG1" time="0.023">
   <properties/>
-  <testcase name="getTheoriestunde200Withfahrschulid" classname="testGetTheoriestunde" time="0.006"/>
-  <testcase name="getTheoriestunde200Withfahrschulidandthemabezeichnungunddauer" classname="testGetTheoriestunde" time="0.009"/>
-  <testcase name="getTheoriestunde200WithoutParams" classname="testGetTheoriestunde" time="0.008"/>
-  <testcase name="getTheoriestunde200WithAllParams" classname="testGetTheoriestunde" time="0.005"/>
+  <testcase name="getTheoriestunde200Withfahrschulid" classname="testGetTheoriestunde" time="0.004"/>
+  <testcase name="getTheoriestunde200Withfahrschulidandthemabezeichnungunddauer" classname="testGetTheoriestunde" time="0.005"/>
+  <testcase name="getTheoriestunde200WithoutParams" classname="testGetTheoriestunde" time="0.005"/>
+  <testcase name="getTheoriestunde200WithAllParams" classname="testGetTheoriestunde" time="0.004"/>
   <testcase name="getTheoriestunde200Withfahrschulidandthemabezeichnung" classname="testGetTheoriestunde" time="0.005"/>
   <system-out><![CDATA[Location: null
 Location: null

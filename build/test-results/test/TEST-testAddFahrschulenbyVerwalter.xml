@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testAddFahrschulenbyVerwalter" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-12-20T19:59:26" hostname="DESKTOP-ANU2VG1" time="0.092">
+<testsuite name="testAddFahrschulenbyVerwalter" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-12-20T20:03:35" hostname="DESKTOP-ANU2VG1" time="0.083">
   <properties/>
-  <testcase name="addFahrschule400V1" classname="testAddFahrschulenbyVerwalter" time="0.014"/>
-  <testcase name="addFahrschule400V2" classname="testAddFahrschulenbyVerwalter" time="0.022"/>
-  <testcase name="addFahrschule201" classname="testAddFahrschulenbyVerwalter" time="0.054"/>
+  <testcase name="addFahrschule400V1" classname="testAddFahrschulenbyVerwalter" time="0.013"/>
+  <testcase name="addFahrschule400V2" classname="testAddFahrschulenbyVerwalter" time="0.02"/>
+  <testcase name="addFahrschule201" classname="testAddFahrschulenbyVerwalter" time="0.05"/>
   <system-out><![CDATA[Location: null
 
 Location: null
 
-rownum: 4
 Location: http://127.0.0.1:8080/fahrschulen/4
 
 ]]></system-out>
@@ -17,7 +16,7 @@ Location: http://127.0.0.1:8080/fahrschulen/4
 	at org.sqlite.core.DB.newSQLException(DB.java:1022)
 	at org.sqlite.core.DB.execute(DB.java:861)
 	at org.sqlite.jdbc3.JDBC3PreparedStatement.execute(JDBC3PreparedStatement.java:54)
-	at de.hhu.cs.dbs.propra.presentation.rest.Control.addfahrschulenbyVerwalter(Control.java:721)
+	at de.hhu.cs.dbs.propra.presentation.rest.Control.addfahrschulenbyVerwalter(Control.java:718)
 	at testAddFahrschulenbyVerwalter.addFahrschule400V2(testAddFahrschulenbyVerwalter.java:113)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
