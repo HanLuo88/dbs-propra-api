@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testAddPruefungenbyVerwalter" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-12-20T20:03:35" hostname="DESKTOP-ANU2VG1" time="0.101">
+<testsuite name="testAddPruefungenbyVerwalter" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-12-21T11:58:44" hostname="DESKTOP-ANU2VG1" time="0.096">
   <properties/>
   <testcase name="addPruefung201" classname="testAddPruefungenbyVerwalter" time="0.046"/>
   <testcase name="addPruefung400V1" classname="testAddPruefungenbyVerwalter" time="0.014"/>
   <testcase name="addPruefung400V2" classname="testAddPruefungenbyVerwalter" time="0.007"/>
-  <testcase name="addPruefung400V3" classname="testAddPruefungenbyVerwalter" time="0.015"/>
-  <testcase name="addPruefung400V4" classname="testAddPruefungenbyVerwalter" time="0.018"/>
+  <testcase name="addPruefung400V3" classname="testAddPruefungenbyVerwalter" time="0.013"/>
+  <testcase name="addPruefung400V4" classname="testAddPruefungenbyVerwalter" time="0.015"/>
   <system-out><![CDATA[Location: http://127.0.0.1:8080/pruefungen/6
 
 Location: null

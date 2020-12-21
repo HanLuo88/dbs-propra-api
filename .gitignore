@@ -231,5 +231,7 @@ gradle-app.setting
 **/build/
 
 /.idea/*
+/database.db-shm
+/database.db-wal
 
 # End of https://www.gitignore.io/api/macos,gradle,windows,eclipse,intellij+all

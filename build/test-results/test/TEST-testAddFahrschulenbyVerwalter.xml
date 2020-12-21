@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testAddFahrschulenbyVerwalter" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-12-20T20:03:35" hostname="DESKTOP-ANU2VG1" time="0.083">
+<testsuite name="testAddFahrschulenbyVerwalter" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-12-21T11:58:44" hostname="DESKTOP-ANU2VG1" time="0.236">
   <properties/>
-  <testcase name="addFahrschule400V1" classname="testAddFahrschulenbyVerwalter" time="0.013"/>
-  <testcase name="addFahrschule400V2" classname="testAddFahrschulenbyVerwalter" time="0.02"/>
-  <testcase name="addFahrschule201" classname="testAddFahrschulenbyVerwalter" time="0.05"/>
+  <testcase name="addFahrschule400V1" classname="testAddFahrschulenbyVerwalter" time="0.011"/>
+  <testcase name="addFahrschule400V2" classname="testAddFahrschulenbyVerwalter" time="0.018"/>
+  <testcase name="addFahrschule201" classname="testAddFahrschulenbyVerwalter" time="0.206"/>
   <system-out><![CDATA[Location: null
 
 Location: null

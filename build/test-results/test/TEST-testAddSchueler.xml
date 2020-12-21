@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testAddSchueler" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-12-20T20:03:35" hostname="DESKTOP-ANU2VG1" time="0.063">
+<testsuite name="testAddSchueler" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-12-21T11:58:45" hostname="DESKTOP-ANU2VG1" time="0.067">
   <properties/>
-  <testcase name="addschueler400V1" classname="testAddSchueler" time="0.005"/>
-  <testcase name="addschueler400mitSQLExcep" classname="testAddSchueler" time="0.029"/>
-  <testcase name="addschueler201" classname="testAddSchueler" time="0.028"/>
+  <testcase name="addschueler400V1" classname="testAddSchueler" time="0.006"/>
+  <testcase name="addschueler400mitSQLExcep" classname="testAddSchueler" time="0.032"/>
+  <testcase name="addschueler201" classname="testAddSchueler" time="0.029"/>
   <system-out><![CDATA[Location: null
 
 Location: null
