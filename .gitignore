@@ -230,8 +230,9 @@ gradle-app.setting
 ### Gradle Patch ###
 **/build/
 
-/.idea/*
-/database.db-shm
-/database.db-wal
+**/.gradle/*
+**/.idea/*
+/data/database.db-shm
+/data/database.db-wal
 
 # End of https://www.gitignore.io/api/macos,gradle,windows,eclipse,intellij+all
