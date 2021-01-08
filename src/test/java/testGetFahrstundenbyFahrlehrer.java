@@ -1,7 +1,7 @@
 import de.hhu.cs.dbs.propra.application.configurations.SecurityContext;
 import de.hhu.cs.dbs.propra.domain.model.Role;
 import de.hhu.cs.dbs.propra.domain.model.User;
-import de.hhu.cs.dbs.propra.presentation.rest.Control;
+import de.hhu.cs.dbs.propra.presentation.rest.FahrlehrerAuthenticated;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -18,13 +18,13 @@ public class testGetFahrstundenbyFahrlehrer
 {
     private static DataSource ds;
 
-    static Control c;
+    static FahrlehrerAuthenticated c;
 
     @BeforeClass
     public static void setDataSource()
     {
         ds = TestUtil.getDataSource();
-        c = new Control();
+        c = new FahrlehrerAuthenticated();
 
         c.setDatasource(ds);
 

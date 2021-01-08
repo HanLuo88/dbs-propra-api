@@ -1,9 +1,5 @@
-import de.hhu.cs.dbs.propra.Application;
-import de.hhu.cs.dbs.propra.presentation.rest.Control;
-import org.glassfish.jersey.server.internal.routing.UriRoutingContext;
+import de.hhu.cs.dbs.propra.presentation.rest.OpenAccess;
 import org.junit.*;
-import org.sqlite.SQLiteConfig;
-import org.sqlite.SQLiteDataSource;
 
 import static org.junit.Assert.*;
 
@@ -11,24 +7,19 @@ import static org.junit.Assert.*;
 import javax.sql.DataSource;
 import javax.ws.rs.core.*;
 
-import java.io.File;
-import java.io.PrintWriter;
-import java.net.URI;
 import java.sql.*;
-import java.util.List;
-import java.util.Properties;
 
 public class testGetFahrzeug
 {
     private static DataSource ds;
 
-    static Control c;
+    static OpenAccess c;
 
     @BeforeClass
     public static void setup()
     {
         ds = TestUtil.getDataSource();
-        c = new Control();
+        c = new OpenAccess();
         c.setDatasource(ds);
 
         MyUriInfo uriinfo = new MyUriInfo("//127.0.0.1/", 8080, "/fahrzeuge/");
